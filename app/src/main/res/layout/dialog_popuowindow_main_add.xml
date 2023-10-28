@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialog_main_add_pop"
+    android:layout_width="120dp"
+    android:layout_height="145dp"
+    android:background="@drawable/bg_main_add_dialog"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="25dp" />
+
+    <TextView
+        android:id="@+id/dialog_native_import"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:text="@string/native_import"
+        android:textColor="@color/white"
+        app:drawableStartCompat="@drawable/baseline_native_import" />
+
+    <TextView
+        android:id="@+id/dialog_load_package"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:text="@string/load_package"
+        android:textColor="@color/white"
+        app:drawableStartCompat="@drawable/baseline_folder_zip" />
+
+    <TextView
+        android:id="@+id/dialog_my_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:text="@string/my_game"
+        android:textColor="@color/white"
+        app:drawableStartCompat="@drawable/baseline_my_game" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="25dp" />
+</LinearLayout>

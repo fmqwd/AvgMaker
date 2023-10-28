@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/list_main_list_body"
+        android:layout_width="100dp"
+        android:layout_height="135dp"
+        android:background="#D8D8D8">
+
+        <TextView
+            android:id="@+id/list_main_list_title"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:maxWidth="100dp"
+            android:maxHeight="135dp"
+            android:maxLines="4"
+            android:paddingStart="4dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="4dp"
+            android:visibility="visible"
+            tools:text="测试用名字12312312331231231231123" />
+
+        <ImageView
+            android:id="@+id/list_main_list_title_img"
+            android:layout_width="100dp"
+            android:layout_height="135dp"
+            android:importantForAccessibility="no"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/list_main_list_name"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:maxLines="2"
+        android:textSize="12sp"
+        tools:text="测试用名字12312312331231231231123" />
+</LinearLayout>

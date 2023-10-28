@@ -4,15 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <ImageView
+        android:id="@+id/main_none_data_add"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/baseline_main_add"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/main_library_title"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="@string/library"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/main_search"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/bg_main_search"
+        android:src="@drawable/baseline_search"
+        app:layout_constraintBottom_toBottomOf="@+id/main_library_title"
+        app:layout_constraintEnd_toStartOf="@id/main_add"
+        app:layout_constraintTop_toTopOf="@id/main_library_title" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/main_add"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bg_main_search"
+        android:src="@drawable/baseline_add"
+        app:layout_constraintBottom_toBottomOf="@+id/main_library_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/main_library_title" />
+
+    <View
+        android:id="@+id/view_main_split"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="8dp"
+        android:background="#D8D8D8"
+        app:layout_constraintTop_toBottomOf="@id/main_library_title"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_main_split"
+        app:spanCount="3"
+        tools:listitem="@layout/list_main_list" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

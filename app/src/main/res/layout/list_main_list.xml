@@ -22,6 +22,7 @@
             android:paddingStart="4dp"
             android:paddingTop="5dp"
             android:paddingEnd="4dp"
+            android:textColor="@color/black"
             android:visibility="visible"
             tools:text="测试用名字12312312331231231231123" />
 
@@ -41,6 +42,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
         android:maxLines="2"
+        android:textColor="@color/black"
         android:textSize="12sp"
         tools:text="测试用名字12312312331231231231123" />
 </LinearLayout>

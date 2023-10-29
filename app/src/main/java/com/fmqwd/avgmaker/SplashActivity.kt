@@ -1,14 +1,21 @@
 package com.fmqwd.avgmaker
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import com.fmqwd.avgmaker.datas.GlobalData
+import androidx.appcompat.app.AppCompatActivity
+import com.fmqwd.avgmaker.database.DatabaseManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+/*
+ * @author :fmqwd
+ * @projectName
+ * @description: Splash页，包括全局初始化相关内容
+ * @date :2023/10/28 10:21
+ */
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
     private val countDownTime = 1000L
@@ -16,7 +23,6 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-
         val scope = CoroutineScope(Dispatchers.Default)
         scope.launch {
 
@@ -31,11 +37,11 @@ class SplashActivity : AppCompatActivity() {
 
     //初始化放相关在这里
     private suspend fun initialize() {
-        // TODO:
+        DatabaseManager.initialize(this)
     }
 
     private fun jump2MainPage() {
-        intent.setClass(this@SplashActivity, MainActivity::class.java)
+        val intent = Intent(applicationContext, MainActivity::class.java)
         startActivity(intent)
         finish()
     }

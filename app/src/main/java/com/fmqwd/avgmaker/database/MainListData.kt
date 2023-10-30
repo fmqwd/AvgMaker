@@ -2,6 +2,7 @@ package com.fmqwd.avgmaker.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.fmqwd.avgmaker.datas.ListMainListBean
 
 /**
  * @projectName
@@ -16,4 +17,9 @@ data class MainListData(
     val name: String,
     val path: String,
     val image: String
-)
+) {
+    fun toListMainListBean(): ListMainListBean {
+        return ListMainListBean(id, title, name, image, path)
+    }
+
+}

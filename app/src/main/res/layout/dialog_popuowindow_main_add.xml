@@ -13,13 +13,13 @@
         android:layout_height="25dp" />
 
     <TextView
-        android:id="@+id/dialog_native_import"
+        android:id="@+id/dialog_create_game"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawablePadding="5dp"
         android:gravity="center"
         android:paddingBottom="15dp"
-        android:text="@string/native_import"
+        android:text="@string/create_game"
         android:textColor="@color/white"
         app:drawableStartCompat="@drawable/baseline_native_import" />
 

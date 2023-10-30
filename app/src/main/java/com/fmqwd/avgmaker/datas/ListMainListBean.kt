@@ -1,5 +1,7 @@
 package com.fmqwd.avgmaker.datas
 
+import com.fmqwd.avgmaker.database.MainListData
+
 /*
  * @author :fmqwd
  * @projectName
@@ -12,6 +14,10 @@ data class ListMainListBean(
     val id: String,
     var title: String,
     var name: String,
-    var image: String,
-    var path: String
-)
+    var path: String,
+    var image: String
+) {
+    fun toMainListData(): MainListData {
+        return MainListData(id, title, name, image, path)
+    }
+}

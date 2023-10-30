@@ -5,6 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.fmqwd.avgmaker.database.DatabaseManager
+import com.fmqwd.avgmaker.database.MainListData
+import com.fmqwd.avgmaker.datas.GlobalData
+import com.fmqwd.avgmaker.datas.ListMainListBean
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -36,8 +39,15 @@ class SplashActivity : AppCompatActivity() {
     }
 
     //初始化放相关在这里
-    private suspend fun initialize() {
+    private fun initialize() {
         DatabaseManager.initialize(this)
+
+        val database = DatabaseManager.getDatabase()
+        val mainListDao = database.mainListDataDao()
+        val dbList: List<MainListData> = mainListDao.getAll()
+        val adapterList: List<ListMainListBean> = dbList.map { it.toListMainListBean() }
+
+        GlobalData.setMainListData(ArrayList(adapterList))
     }
 
     private fun jump2MainPage() {

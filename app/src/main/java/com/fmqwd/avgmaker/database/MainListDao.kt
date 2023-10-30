@@ -16,16 +16,17 @@ import androidx.room.Update
 @Dao
 interface MainListDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(mainListData: MainListData)
+    fun insert(mainListData: MainListData)
 
     @Delete
-    suspend fun delete(data: MainListData)
+    fun delete(data: MainListData)
+
     @Update
     fun update(mainListData: MainListData)
 
     @Query("SELECT * FROM MainListData")
-    suspend fun getAll(): List<MainListData>
+    fun getAll(): List<MainListData>
 
     @Query("SELECT * FROM MainListData WHERE id = :id")
-    suspend fun getById(id: String): MainListData?
+    fun getById(id: String): MainListData?
 }

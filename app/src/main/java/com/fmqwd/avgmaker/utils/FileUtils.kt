@@ -17,7 +17,7 @@ object FileUtils {
     }
 
     fun getFilePermissions(context: Context) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && checkFilePermission()) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && !checkFilePermission()) {
             AlertDialog.Builder(context).setTitle("加载外部文件需要提供访问权限")
                 .setPositiveButton("取消", null).setNegativeButton(
                     "确定"

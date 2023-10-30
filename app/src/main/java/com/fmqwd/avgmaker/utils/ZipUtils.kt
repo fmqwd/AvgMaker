@@ -1,6 +1,7 @@
 package com.fmqwd.avgmaker.utils
 
 import java.io.File
+import java.nio.charset.Charset
 import java.util.zip.ZipFile
 
 class ZipUtils {
@@ -10,7 +11,7 @@ class ZipUtils {
     }
 
     fun unzip(zipFilePath: String, destinationPath: String, onProgressListener: OnProgressListener?) {
-        ZipFile(zipFilePath).use { zipFile ->
+        ZipFile(zipFilePath, Charset.forName("GBK")).use { zipFile ->
             val totalSize = zipFile.entries().asSequence().sumOf { it.size.toInt() }
             var extractedSize = 0
 
